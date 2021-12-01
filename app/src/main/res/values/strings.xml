@@ -1,0 +1,23 @@
+<resources>
+
+    <string name="app_name">Recipe Application</string>
+
+    <!-- general -->
+    <string name="error">Error</string>
+    <string name="search">Search</string>
+
+    <!-- recipe list -->
+    <string name="food_image">Food image</string>
+
+    <!-- food categories -->
+    <string name="chicken">Chicken</string>
+    <string name="beef">Beef</string>
+    <string name="soup">Soup</string>
+    <string name="dessert">Dessert</string>
+    <string name="vegetarian">Vegetarian</string>
+    <string name="milk">Milk</string>
+    <string name="vegan">Vegan</string>
+    <string name="pizza">Pizza</string>
+    <string name="donut">Donut</string>
+
+</resources>
