@@ -9,3 +9,6 @@ Food Recipies app
 * navigation component
 * coil
 * custom theming
+* process death handling
+* proguard
+* splash screen
