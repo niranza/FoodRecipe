@@ -12,3 +12,5 @@ Food Recipies app
 * process death handling
 * proguard
 * splash screen
+* screen configuration changes
+* light and dark custom theming
