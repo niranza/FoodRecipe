@@ -14,6 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import com.niran.recipeapplication.R
+import com.niran.recipeapplication.core.common.extensions.whenNotNullOrBlank
 import com.niran.recipeapplication.domain.models.Recipe
 
 @Composable
@@ -30,7 +31,7 @@ fun ItemRecipe(
         elevation = 8.dp,
     ) {
         Column {
-            recipe.featuredImage?.let { url ->
+            recipe.featuredImage?.whenNotNullOrBlank { url ->
                 Image(
                     painter = rememberImagePainter(
                         data = url,
@@ -50,22 +51,26 @@ fun ItemRecipe(
                 modifier = Modifier
                     .fillMaxWidth()
                     .padding(top = 12.dp, bottom = 12.dp, start = 8.dp, end = 8.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.SpaceBetween,
             ) {
-                Text(
-                    text = recipe.title,
-                    modifier = Modifier
-                        .fillMaxWidth(0.85f)
-                        .wrapContentWidth(Alignment.Start),
-                    style = MaterialTheme.typography.h3
-                )
-                Text(
-                    text = recipe.rating?.toString() ?: "",
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .wrapContentWidth(Alignment.End)
-                        .align(Alignment.CenterVertically),
-                    style = MaterialTheme.typography.h5
-                )
+                recipe.title?.whenNotNullOrBlank { title ->
+                    Text(
+                        text = title,
+                        modifier = Modifier
+                            .fillMaxWidth(0.85f)
+                            .wrapContentWidth(Alignment.Start),
+                        style = MaterialTheme.typography.h3
+                    )
+                }
+                recipe.rating?.let { rating ->
+                    Text(
+                        text = rating.toString(),
+                        modifier = Modifier
+                            .wrapContentWidth(Alignment.End),
+                        style = MaterialTheme.typography.h5
+                    )
+                }
             }
         }
     }

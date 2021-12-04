@@ -1,6 +1,6 @@
 package com.niran.recipeapplication.data.network.apis
 
-import com.niran.recipeapplication.core.common.Constants
+import com.niran.recipeapplication.common.TOKEN
 import com.niran.recipeapplication.data.network.models.RecipeDto
 import com.niran.recipeapplication.data.network.responses.RecipeSearchResponse
 import retrofit2.http.GET
@@ -13,12 +13,12 @@ interface RecipeApi {
     suspend fun search(
         @Query("page") page: Int,
         @Query("query") query: String,
-        @Header("Authorization") token: String = Constants.TOKEN,
-        ): RecipeSearchResponse
+        @Header("Authorization") token: String = TOKEN,
+    ): RecipeSearchResponse?
 
     @GET("get")
     suspend fun get(
-        @Header("Authorization") token: String,
         @Query("id") id: Int,
-    ): RecipeDto
+        @Header("Authorization") token: String = TOKEN,
+    ): RecipeDto?
 }

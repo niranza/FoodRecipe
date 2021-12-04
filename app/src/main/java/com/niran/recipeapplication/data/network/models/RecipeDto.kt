@@ -27,16 +27,16 @@ data class RecipeDto(
     val title: String?
 ) {
     fun toRecipe() = Recipe(
-        title ?: "",
-        publisher ?: "",
+        title,
+        publisher,
         featuredImage,
         rating,
-        sourceUrl ?: "",
-        description ?: "",
-        cookingInstructions ?: "",
-        ingredients ?: listOf(),
-        dateAdded ?: "",
-        dateUpdated ?: "",
-        pk ?: -1,
+        sourceUrl,
+        description,
+        cookingInstructions,
+        ingredients,
+        dateAdded,
+        dateUpdated,
+        pk,
         )
 }

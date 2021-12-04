@@ -5,21 +5,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.niran.recipeapplication.core.common.Constants.PAGE_SIZE
-import com.niran.recipeapplication.core.common.Constants.STATE_KEY_CATEGORY_POSITION
-import com.niran.recipeapplication.core.common.Constants.STATE_KEY_PAGE
-import com.niran.recipeapplication.core.common.Constants.STATE_KEY_QUERY
-import com.niran.recipeapplication.core.common.Constants.STATE_KEY_SELECTED_CATEGORY
+import com.niran.recipeapplication.common.PAGE_SIZE
 import com.niran.recipeapplication.core.common.Resource
 import com.niran.recipeapplication.core.common.StateHolder
 import com.niran.recipeapplication.domain.enums.FoodCategory
 import com.niran.recipeapplication.domain.models.Recipe
 import com.niran.recipeapplication.domain.use_cases.RecipeUseCases
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import timber.log.Timber
 import javax.inject.Inject
 
 @HiltViewModel
@@ -104,5 +98,13 @@ class RecipeListViewModel @Inject constructor(
             ?.let { categoryPositionWithOffset = it }
         savedStateHandle.get<FoodCategory>(STATE_KEY_SELECTED_CATEGORY)
             ?.let { _selectedFoodCategory.value = it }
+    }
+
+    companion object {
+        private const val TAG = "RecipeListViewModel"
+        private const val STATE_KEY_PAGE = "$TAG.page.key"
+        private const val STATE_KEY_QUERY = "$TAG.query.key"
+        private const val STATE_KEY_CATEGORY_POSITION = "$TAG.category_position.key"
+        private const val STATE_KEY_SELECTED_CATEGORY = "$TAG.selected_category.key"
     }
 }

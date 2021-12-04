@@ -1,6 +1,6 @@
 package com.niran.recipeapplication.di
 
-import com.niran.recipeapplication.core.common.Constants.BASE_URL
+import com.niran.recipeapplication.common.BASE_URL
 import com.niran.recipeapplication.data.network.apis.RecipeApi
 import com.niran.recipeapplication.data.repositories.RecipeRepositoryImpl
 import com.niran.recipeapplication.domain.repositories.RecipeRepository

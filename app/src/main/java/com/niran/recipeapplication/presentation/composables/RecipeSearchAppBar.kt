@@ -1,9 +1,6 @@
 package com.niran.recipeapplication.presentation.composables
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyListState
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
@@ -72,7 +69,9 @@ fun SearchAppBar(
                 )
             }
             LazyRow(
-                state = categoryScrollState
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceEvenly,
+                state = categoryScrollState,
             ) {
                 itemsIndexed(
                     items = FoodCategory.values()

@@ -1,15 +1,15 @@
 package com.niran.recipeapplication.domain.models
 
 data class Recipe(
-    val title: String = "",
-    val publisher: String = "",
+    val title: String? = null,
+    val publisher: String? = null,
     val featuredImage: String? = null,
     val rating: Int? = null,
-    val sourceUrl: String = "",
-    val description: String = "",
-    val cookingInstructions: String = "",
-    val ingredients: List<String> = listOf(),
-    val dateAdded: String = "",
-    val dateUpdated: String = "",
-    val id: Int = -1,
+    val sourceUrl: String? = null,
+    val description: String? = null,
+    val cookingInstructions: String? = null,
+    val ingredients: List<String>? = null,
+    val dateAdded: String? = null,
+    val dateUpdated: String? = null,
+    val id: Int? = null,
 )

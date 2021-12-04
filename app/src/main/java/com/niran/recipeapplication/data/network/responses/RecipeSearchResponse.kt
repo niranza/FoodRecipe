@@ -1,7 +1,6 @@
 package com.niran.recipeapplication.data.network.responses
 
 
-import com.google.gson.annotations.SerializedName
 import com.niran.recipeapplication.data.network.models.RecipeDto
 
 data class RecipeSearchResponse(

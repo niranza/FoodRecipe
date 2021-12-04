@@ -9,16 +9,17 @@ import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
-import javax.xml.transform.TransformerException
 
 class GetRecipe @Inject constructor(
     private val repository: RecipeRepository
 ) {
 
-    operator fun invoke(token: String, id: Int): Flow<Resource<Recipe>> = flow {
+    operator fun invoke(id: Int): Flow<Resource<Recipe>> = flow {
         emit(Resource.Loading())
         try {
-            emit(Resource.Success(repository.get(token, id).toRecipe()))
+            repository.get(id)?.let { recipe ->
+                emit(Resource.Success(recipe))
+            } ?: emit(Resource.Error(R.string.error))
         } catch (e: IOException) {
             emit(Resource.Error(R.string.error))
         } catch (e: HttpException) {

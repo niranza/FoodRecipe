@@ -1,4 +1,4 @@
-package com.niran.recipeapplication.presentation.composables
+package com.niran.recipeapplication.core.presentation.composables
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -20,6 +20,8 @@ fun CircularIndeterminateProgressBar() {
             modifier = Modifier.constrainAs(progressBar) {
                 start.linkTo(parent.start)
                 end.linkTo(parent.end)
+                top.linkTo(parent.top)
+                bottom.linkTo(parent.bottom)
             },
             color = MaterialTheme.colors.primary
         )
