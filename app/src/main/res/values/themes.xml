@@ -22,4 +22,8 @@
     <style name="Theme.RecipeApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.RecipeApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.RecipeApplication.SplashScreen">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
 </resources>

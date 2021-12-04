@@ -1,9 +1,11 @@
 package com.niran.recipeapplication.data.network.models
 
 
+import androidx.annotation.Keep
 import com.google.gson.annotations.SerializedName
 import com.niran.recipeapplication.domain.models.Recipe
 
+@Keep
 data class RecipeDto(
     @SerializedName("cooking_instructions")
     val cookingInstructions: String?,
