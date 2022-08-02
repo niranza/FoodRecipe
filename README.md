@@ -2,7 +2,8 @@
 Food Recipies app  
 
 ## The app integrates
-* mvvm clean architecture pattern
+* MVI pattern
+* clean architecture
 * flows
 * retrofit
 * jetpack compose
@@ -13,4 +14,4 @@ Food Recipies app
 * proguard
 * splash screen
 * screen configuration changes
-* light and dark custom theming
+* light and dark mode
