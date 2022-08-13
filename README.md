@@ -15,3 +15,5 @@ Food Recipies app
 * splash screen
 * screen configuration changes
 * light and dark mode
+  
+  ![Alt Text](https://github.com/niranza/FoodRecipe/blob/main/gifs/food_recipe_gif.gif)
